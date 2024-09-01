@@ -21,6 +21,23 @@ const cartSlice = createSlice({
                 );
             }
         },
+        addToCart(state, action) {
+            const productExist = state.entities[action.payload.id];
+
+            if (productExist) {
+                state.entities[action.payload.id].cartQty += 1;
+
+                toast.info("تعداد افزایش یافت", { position: "bottom-right" });
+            } else {
+                cartAdapter.addOne(state, action.payload);
+
+                toast.success("محصول به سبد خرید اضافه شد", {
+                    position: "bottom-right",
+                });
+            }
+
+            localStorage.setItem("cartItems", JSON.stringify(state.entities));
+        }
     },
 });
 
@@ -28,6 +45,7 @@ export const { selectAll } = cartAdapter.getSelectors((state) => state.cart);
 
 export const {
     populateCart,
+    addToCart,
 
 } = cartSlice.actions;
 
