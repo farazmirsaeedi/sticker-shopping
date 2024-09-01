@@ -44,6 +44,17 @@ const CartTable = () => {
       {cart.length === 0 ? (
         <div className="text-center mt-10">
           <p>سبد خرید شما خالی است ☺️</p>
+          <Link
+            to="/"
+            className="border border-palette-primary text-palette-primary text-lg font-primary font-semibold pt-2 pb-1 leading-relaxed flex 
+      justify-center items-center focus:ring-1 focus:ring-palette-light focus:outline-none w-72 mx-auto mt-5 hover:bg-palette-lighter rounded-sm"
+          >
+            <i
+              className="fa fa-arrow-left w-4 ml-2 inline-flex"
+              aria-hidden="true"
+            ></i>
+            برگشت به صفحه محصولات
+          </Link>
         </div>
       ) : (
         <>
