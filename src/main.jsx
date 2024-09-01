@@ -20,6 +20,11 @@ const router = createBrowserRouter([
         errorElement: <NotFound />,
     },
     {
+        path: "/sticker-shopping",
+        element: <App />,
+        errorElement: <NotFound />,
+    },
+    {
         path: "/products/:productID",
         element: (
             <MainLayout>
