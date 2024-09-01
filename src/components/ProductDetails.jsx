@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 
+import CustomNumeralNumericFormat from "./Price";
 import ProductForm from "./ProductForm";
 import { Helmet } from "react-helmet";
 import { useGetProductQuery } from "../slices/productApi";
@@ -47,7 +48,12 @@ const ProductDetails = () => {
                                 {product.description}
                             </p>
                             <div className="text-xl text-palette-primary font-medium py-4 px-1">
-                                
+                                <CustomNumeralNumericFormat
+                                    value={product.price}
+                                    thousandSeparator=","
+                                    prefix={`قیمت : ‍‍‍`}
+                                    suffix={` تومان `}
+                                />
                             </div>
                         </div>
 
