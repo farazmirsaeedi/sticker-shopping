@@ -22,6 +22,13 @@ const App = () => {
 
             <div className="mx-auto max-w-6xl">
                 <Header />
+                <PaginateItems
+                    productsPerPage={6}
+                    products={products}
+                    isLoading={isLoading}
+                    isSuccess={isSuccess}
+                    isError={isError}
+                />
             </div>
         </MainLayout>
     );
